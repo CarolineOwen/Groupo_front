@@ -1,6 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Lato&display=swap');
+
+$primary: #FD2D01;
+$secondary:#FFD7D7;
+$tertiary: #4E5166;
+$font-1: 'Lato', sans-serif;
+
+
 *{
     box-sizing: border-box;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    font-family: $font-1;
+}
+
+body{
+
+    background-color: $secondary;
+    display: flex;
+    justify-content: center;
+}
+
+.global-container
+{
+    width: 90%;
+    background-color: #FD2D01;
 }
