@@ -1,29 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Signup = () => {
-        
+const [pseudo, setPseudo] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] =useState('');
+const [controlPassword, setControlPassword] =useState('');
+const handleRegister = async (e)=>{
+        e.preventDefault();
+}
+
     return (
             <>
     <div className='main-container'>
       <h1>Inscription</h1>
-        <form method='post'>
-        <label>
-Nom:
-<input type="text" name="name" placeholder='Entrez votre nom'/>
-</label>
-        <label>
-Prénom:
-<input type="text" name="name" placeholder='Entrez votre prénom'/>
-</label>
-<label>
-Email:
-<input type="email" name="name" placeholder='Entrez votre email'/>
-</label>
-<label>
-Choisir un mot de passe :
-<input type="password" name="name" placeholder='Entrez un mot de passe'/>
-</label>
-<button>Créer un compte</button>
+        <form action="" onSubmit={handleRegister} id="signup" method='post'>
+        <label htmlFor='pseudo'>Pseudo
+            <input type="text" name="pseudo" id="pseudo" placeholder='Choisissez un pseudo' onChange={(e) =>
+       setPseudo(e.target.value)} value={pseudo}/></label>
+       <div className="pseudo-error"></div>
+
+       <label htmlFor='email'>Email
+            <input type="email" name="email" id="email" placeholder='Entrez votre email' onChange={(e) =>
+       setEmail(e.target.value)} value={email}/></label>
+       <div className="email-error"></div>
+
+       <label htmlFor='password'>Mot de passe
+            <input type="password" name="password" id="password" placeholder='Entrez un mot de passe' onChange={(e) =>
+       setPassword(e.target.value)} value={password}/></label>
+       <div className="password-error"></div>
+
+       <label htmlFor='controlPassword'>Confirmez le mot de passe
+            <input type="password" name="controlPassword" id="controlPassword" placeholder='Confirmez le mot de passe' onChange={(e) =>
+       setControlPassword(e.target.value)} value={controlPassword}/></label>
+       <div className="passwordControl-error"></div>
+
+
+<input className='btn' type="submit" value="Valider l'inscription"/>
         </form>
         
     </div>

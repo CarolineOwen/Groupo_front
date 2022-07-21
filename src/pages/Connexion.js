@@ -12,7 +12,7 @@ const emailError = document.querySelector('.email-error');
 const passwordError = document.querySelector('.password-error');
 
 axios({method:"post",
-url: 'http://localhost:3000/api/login',
+url: 'http://localhost:3000/api/auth/login',
 withCredentials: false,
 data:{email, 
   password,},
@@ -44,7 +44,7 @@ if(res.data.errors){
   
   <label htmlFor='password'>
     Mot de passe :
-    <input type="text" name="password" id='password' placeholder='Entrez votre mot de passe'onChange={(e) =>
+    <input type="password" name="password" id='password' placeholder='Entrez votre mot de passe'onChange={(e) =>
        setPassword(e.target.value)} value={password}/>
   </label>
   <div className="password-error"></div>
