@@ -1,7 +1,7 @@
 import React from 'react';
 import iconblack from "../assets/iconblack.png";
 
-const Header = () => {
+export default function Header () {
     return (
         <div>
         <header className='header-container'>
@@ -12,5 +12,9 @@ const Header = () => {
     );
 };
 
-export default Header;
+
+
+
+
+
 

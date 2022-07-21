@@ -6,18 +6,20 @@ import Home from './pages/Home';
 import Error from './components/Error';
 import {Routes, Route} from 'react-router-dom';
 import Signup from './pages/Signup';
-
+import {BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <div className='global'>
 <Header/>
-<Routes>
-<Route path ='/' element={<Connexion/>}/>
-<Route path ='/signup' element={<Signup/>}/>
-<Route path ='/home' element={<Home/>}/>
-<Route path ='/*' element={<Error/>}/>
-</Routes>
+<BrowserRouter>
+  <Routes>
+    <Route path ='/' element={<Connexion/>}/>
+    <Route path ='/signup' element={<Signup/>}/>
+    <Route path ='/home' element={<Home/>}/>
+    <Route path ='/*' element={<Error/>}/>
+  </Routes>
+</BrowserRouter>
 <Footer/>
     </div>
   );

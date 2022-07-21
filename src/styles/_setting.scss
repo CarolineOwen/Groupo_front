@@ -17,12 +17,19 @@ $font-1: 'Lato', sans-serif;
 body{
 
     background-color: $secondary;
-    display: flex;
-    justify-content: center;
+    
 }
 
-.global-container
-{
-    width: 90%;
-    background-color: #FD2D01;
+
+
+#root{
+    width:100%;
+    max-width: 1400px;
+}
+
+.global{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
