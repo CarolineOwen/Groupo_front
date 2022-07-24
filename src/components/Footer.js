@@ -1,16 +1,22 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
-const Footer = () => {
+
+ 
+function Footer() {
+
+    const logout=()=>{
+        localStorage.clear();
+    }
     return (
-        <>
-            <footer className="footer-container">
-            
-                <p>Pour en savoir plus sur notre engagement retrouvez-nous ici
-                    <i className="fa-solid fa-arrow-up-right-from-square"></i></p>
-                
-            </footer>
-        </>
-    );
-};
+        <nav>
+            <li onClick={logout}>
+            <NavLink to="/"><i className="fa-solid fa-door-open"></i></NavLink>
+            </li>
+        </nav>
+    )
+}
+
+
 
 export default Footer;

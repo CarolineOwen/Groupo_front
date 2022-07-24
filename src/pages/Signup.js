@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Signup = () => {
@@ -6,9 +6,53 @@ const [pseudo, setPseudo] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] =useState('');
 const [controlPassword, setControlPassword] =useState('');
+
+
+
+
+
+
 const handleRegister = async (e)=>{
         e.preventDefault();
-}
+        
+        const pseudoError = document.querySelector('.pseudo-error');
+        const emailError = document.querySelector('.email-error');
+        const passwordError = document.querySelector('.password-error');
+        const controlPasswordError = document.querySelector('.passwordControl-error');
+        controlPasswordError.innerHTML="";
+
+        
+
+        if(password !== controlPassword){
+                controlPasswordError.innerHTML="Les mots de passe ne sont pas identiques, réessayez"
+        }else{
+                axios(
+                       {method:"post",
+                       url: 'http://localhost:3000/api/auth/signup',
+                       withCredentials: false,
+                       data:{
+                        email, 
+                        password,},
+                }
+
+                )
+                .then((res)=>{
+                        if(res.data.erros){
+                                pseudoError.innerHTML = res.data.errors.pseudo;
+                        emailError.innerHTML = res.data.errors.email;
+                                passwordError.innerHTML = res.data.errors.password;
+                        }else{
+                                window.location = '/home';
+                              }
+                })
+                .catch((err)=>{
+                        console.log(err);
+                      });
+
+                };}
+                
+
+                
 
     return (
             <>
@@ -34,7 +78,6 @@ const handleRegister = async (e)=>{
             <input type="password" name="controlPassword" id="controlPassword" placeholder='Confirmez le mot de passe' onChange={(e) =>
        setControlPassword(e.target.value)} value={controlPassword}/></label>
        <div className="passwordControl-error"></div>
-
 
 <input className='btn' type="submit" value="Valider l'inscription"/>
         </form>

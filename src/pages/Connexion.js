@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Connexion = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] =useState('');
-  
+
 
   const handleLogin =(e) =>{
 e.preventDefault();
+
 const emailError = document.querySelector('.email-error');
 const passwordError = document.querySelector('.password-error');
 
@@ -23,6 +24,8 @@ if(res.data.errors){
   passwordError.innerHTML = res.data.errors.password;
 
 }else{
+  const token  =  res.data.token;
+       localStorage.setItem("token", token);
   window.location = '/home';
 }
 })
@@ -30,6 +33,7 @@ if(res.data.errors){
   console.log(err);
 });
   };
+
 
     return (
     <>
@@ -53,6 +57,7 @@ if(res.data.errors){
             </form>
             <p>Pour creer un compte c'est par içi<a href="/signup"><i className="fa-solid fa-hand-pointer"></i></a></p>
         </div>
+        
         </>
     );
 };

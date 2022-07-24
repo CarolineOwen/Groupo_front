@@ -10,6 +10,9 @@
 body {
   background-color: #FFD7D7;
 }
+body textarea {
+  border: 2px solid #FD2D01;
+}
 
 #root {
   width: 100%;
@@ -89,4 +92,9 @@ body {
 .main-container i {
   color: #FD2D01;
   padding-left: 5px;
+}
+
+.posts {
+  background-color: bisque;
+  border: 2px solid #4E5166;
 }/*# sourceMappingURL=index.css.map */

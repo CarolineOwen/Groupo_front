@@ -17,6 +17,9 @@ $font-1: 'Lato', sans-serif;
 body{
 
     background-color: $secondary;
+    textarea{
+        border:2px solid $primary;
+    }
     
 }
 
