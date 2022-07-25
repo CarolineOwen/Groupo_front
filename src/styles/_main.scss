@@ -8,14 +8,13 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 margin-top: 20px;
-margin-bottom: 100px;
+margin-bottom: 50px;
 border-radius: 10px;
 padding-top: 15px;
 padding-bottom: 15px;
-width:70%;
+width:50%;
 
 form{
-    background-color: aqua;
 display: flex;
 flex-direction: column;
     justify-content: space-around;
@@ -24,6 +23,12 @@ flex-direction: column;
     margin-bottom: 20px;
     width: 100%;
     
+    input{
+        background-color: $secondary;
+        margin:5px;
+        border-radius: 3px;
+        font-size: 16px;
+    }
 }
 
 .btn{
@@ -32,6 +37,7 @@ flex-direction: column;
     border-radius: 10px;
     &:hover{
         background-color: $primary;
+        box-shadow: 1px 1px 1px 1px;
     }
 }
 
@@ -41,7 +47,9 @@ p{
 i{
     color:$primary;
     padding-left: 5px;
+    font-size: 20px;
 
 }
 
 }
+

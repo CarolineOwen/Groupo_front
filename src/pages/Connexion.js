@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 const Connexion = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] =useState('');
-
+  let navigate = useNavigate();
 
   const handleLogin =(e) =>{
 e.preventDefault();
 
 const emailError = document.querySelector('.email-error');
 const passwordError = document.querySelector('.password-error');
+
 
 axios({method:"post",
 url: 'http://localhost:3000/api/auth/login',
@@ -26,7 +28,7 @@ if(res.data.errors){
 }else{
   const token  =  res.data.token;
        localStorage.setItem("token", token);
-  window.location = '/home';
+  navigate('/home');
 }
 })
 .catch((err)=>{
@@ -55,7 +57,7 @@ if(res.data.errors){
   <br/>
   <input className='btn' type="submit" value="Connexion"/>
             </form>
-            <p>Pour creer un compte c'est par içi<a href="/signup"><i className="fa-solid fa-hand-pointer"></i></a></p>
+            <p>Pour créer un compte c'est par içi <a href="/signup"><i className="fa-solid fa-hand-pointer"></i></a></p>
         </div>
         
         </>

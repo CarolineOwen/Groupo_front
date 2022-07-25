@@ -9,7 +9,7 @@ function Footer() {
         localStorage.clear();
     }
     return (
-        <nav>
+        <nav className='footer-container'>
             <li onClick={logout}>
             <NavLink to="/"><i className="fa-solid fa-door-open"></i></NavLink>
             </li>

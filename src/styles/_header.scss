@@ -3,17 +3,22 @@
     margin-top: 20px ;
     text-align: center;
     color:black ;
-    background-color: aqua;
-   
-
+    width: 50%;
+    font-size: 15px;
+    margin-bottom: 50px;
+    .fa-users{
+        padding-left: 20px;
+    }
     img{
 width:200px;
-height:100px;
+height:50px;
 object-fit: cover;
     }
 }
 
 .footer-container{
+    margin-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,5 +29,6 @@ object-fit: cover;
     i{
         color:$primary;
         padding-left: 5px;
+        font-size: 25px;
     }
 }

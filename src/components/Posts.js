@@ -4,27 +4,30 @@ import Thread from './Thread';
 
 
 const Posts = () => {
-    const [data, setData] =useState([])
+    const [data, setData] =useState([]);
+
 
     const getData=()=>{
+    
+
        axios.get('http://localhost:3000/api/posts')
        .then((res)=>
-        setData(res.data)
+        setData(res.data))
         
-       )
        .catch((err)=> console.log(err))
     }
-
+   
     useEffect(()=>{
     getData()
 },[]);
 
+
     return (
+    
         <>
         <div className='posts'>
-        
         {data.map((posts)=>(
-        <Thread key={posts._id} todo={posts}/>))}
+        <Thread key={posts._id} props={posts}/>))}
             </div>
         </>
     );
