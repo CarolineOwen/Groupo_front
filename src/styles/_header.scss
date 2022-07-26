@@ -1,11 +1,16 @@
 
 .header-container{
-    margin-top: 20px ;
-    text-align: center;
-    color:black ;
-    width: 50%;
-    font-size: 15px;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  justify-content: center;
+  background-color: rgb(248, 184, 184);
+  border: 2px solid $tertiary;
+  width: 100%;
+  box-shadow: inset 2px 0px 2px 2px darken($tertiary, 4);
+  margin: auto;
+  padding: 10px;
+    margin-bottom: 20px;
     .fa-users{
         padding-left: 20px;
     }
@@ -14,21 +19,33 @@ width:200px;
 height:50px;
 object-fit: cover;
     }
+    i{color: $primary;
+    }
+    h1{
+        font-size: 30px;
+        margin-top:5px;
+    }
 }
 
 .footer-container{
-    margin-top: 50px;
+    margin-top: 30px;
     padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    ul{
-        display: flex;
-    }
     i{
         color:$primary;
         padding-left: 5px;
         font-size: 25px;
     }
+}
+
+
+/* MEDIA QUERRIES 
+smartphones*/
+
+@media screen and (max-width: 700px){
+    .header-container{
+        h1{font-size: 20px;
+    }
+    }
+    
 }
