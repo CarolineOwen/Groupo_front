@@ -37,11 +37,14 @@ const handleRegister = async (e)=>{
 
                 )
                 .then((res)=>{
+                        console.log(res)
                         if(res.data.erros){
                                 pseudoError.innerHTML = res.data.errors.pseudo;
                         emailError.innerHTML = res.data.errors.email;
                                 passwordError.innerHTML = res.data.errors.password;
-                        }else{
+                        }else{const token  =  res.data.token;
+                                localStorage.setItem("token", token);
+                                console.log(token);
                                 window.location = '/home';
                               }
                 })

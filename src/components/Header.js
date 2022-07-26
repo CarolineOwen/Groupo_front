@@ -1,5 +1,5 @@
 import React from 'react';
-import iconblack from "../assets/iconblack.png";
+import iconblack from "../assets/icon.png";
 
 
 

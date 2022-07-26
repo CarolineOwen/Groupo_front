@@ -8,12 +8,16 @@ const Posts = () => {
 
 
     const getData=()=>{
-    
+        const config = {
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        }
 
-       axios.get('http://localhost:3000/api/posts')
+       axios.get('http://localhost:3000/api/posts', config)
        .then((res)=>
-        setData(res.data))
-        
+        setData(res.data)
+    )
        .catch((err)=> console.log(err))
     }
    

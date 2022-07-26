@@ -18,12 +18,18 @@
 width:200px;
 height:50px;
 object-fit: cover;
+box-shadow: 0px 0px 8px #ffffff;
+border-radius: 10px;
+margin-bottom:20px;
     }
     i{color: $primary;
+    
     }
     h1{
         font-size: 30px;
         margin-top:5px;
+        margin-bottom: 0px;
+    
     }
 }
 
@@ -31,9 +37,11 @@ object-fit: cover;
     margin-top: 30px;
     padding-bottom: 50px;
     align-items: center;
-    i{
+    i{box-shadow: 0px 0px 8px #ffffff;
+        background-color: #ffffff;
+        border-radius: 10px;
         color:$primary;
-        padding-left: 5px;
+        padding: 15px;
         font-size: 25px;
     }
 }
@@ -49,3 +57,5 @@ smartphones*/
     }
     
 }
+
+
