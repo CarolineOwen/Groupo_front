@@ -9,8 +9,8 @@ const Thread = ({props}) => {
                 <p>Message:{props.comments}</p>
                 <div>{props.imageUrl && <img src={props.imageUrl} alt="legende"/>}</div>
                 <div className="pouces">
-                <button><i className="fa-solid fa-thumbs-up"></i></button>
-            <button><i className="fa-solid fa-thumbs-down"></i></button>
+                <button><i className="fa-solid fa-thumbs-up"></i>Like</button>
+            <button><i className="fa-solid fa-thumbs-down"></i>Dislike</button>
             </div>
             </div>
                       

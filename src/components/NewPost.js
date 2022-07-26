@@ -1,20 +1,32 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+
 
 
 const NewPost = () => {
-    const [message, setMessage] = useState("");
-    const [picture, setPicture] = useState(null);
+ 
+    const [comments, setComments] = useState("");
+    const [imageUrl, setImageUrl] = useState(null);
     const [file, setFile] = useState();
     
-    
 
-    const handlePicture =(e) =>{
-setPicture(URL.createObjectURL(e.target.files[0]));
+    const handleImageUrl =(e) =>{
+setImageUrl(URL.createObjectURL(e.target.files[0]));
 setFile(e.target.files[0]);
     }
-    const handlePost =async()=>{
+
+    const handlePost =(e)=>{
+        e.preventDefault();
+        const userId = localStorage.getItem("userId");
+        console.log(userId);
+        axios({method:"post",
+url: 'http://localhost:3000/api/posts',
+withCredentials: false,
+data:{userId,
+    comments, 
+    imageUrl
+  },
+})
 
     }
 
@@ -22,17 +34,17 @@ setFile(e.target.files[0]);
         <>
         <div className='global-post'>
         <div className='message'>
-            <textarea name="message" id="message" placeholder="Ecrivez quelque chose" 
-            onChange={(e)=>setMessage(e.target.value)} value={message}/>
+            <textarea name="comments" id="comments" placeholder="Ecrivez quelque chose" 
+            onChange={(e)=>setComments(e.target.value)} value={comments}/>
         </div>
         <div>
         <i className="fa-solid fa-image"></i>
         <input type="file" id="file-upload" name="file" accept=".jpg, .jpeg, .png" 
-        onChange={(e)=> handlePicture(e)}/>
+        onChange={(e)=> handleImageUrl(e)}/>
         </div>
         <button onClick={handlePost}>Poster</button>
-        <p>{message}</p>
-        <img src={picture} alt=""/>
+        <p>{comments}</p>
+        <img src={imageUrl} alt="illustration du post"/>
         </div>
         </>
     );

@@ -27,7 +27,9 @@ if(res.data.errors){
 
 }else{
   const token  =  res.data.token;
+  const userId  =  res.data.userId;
        localStorage.setItem("token", token);
+       localStorage.setItem("userId", userId);
   navigate('/home');
 }
 })
