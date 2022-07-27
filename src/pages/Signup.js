@@ -29,7 +29,7 @@ const handleRegister = async (e)=>{
                 axios(
                        {method:"post",
                        url: 'http://localhost:3000/api/auth/signup',
-                       withCredentials: false,
+                       
                        data:{
                         email, 
                         password,},

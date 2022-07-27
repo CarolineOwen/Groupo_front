@@ -16,7 +16,6 @@ const passwordError = document.querySelector('.password-error');
 
 axios({method:"post",
 url: 'http://localhost:3000/api/auth/login',
-withCredentials: false,
 data:{email, 
   password,},
 })

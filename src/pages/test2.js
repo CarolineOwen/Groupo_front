@@ -1,46 +1,62 @@
+import axios from 'axios';
+import React, { useState } from 'react';
 
-import React, { useEffect, useState } from 'react';
+const NewPost = () => {
+ 
+    const [comments, setComments] = useState("");
+    const [imageUrl, setImageUrl] = useState(null);
+    const [file, setFile] = useState();
+    
 
+    const handleImageUrl =(e) =>{
+setImageUrl(URL.createObjectURL(e.target.files[0]));
+setFile(e.target.files[0]);
+    }
 
-const Hook = () => {
-const [count, setCount]= useState(10)
-
-useEffect(()=>{
-console.log("je suis toto")
+    const handlePost =(e)=>{
+        e.preventDefault();
+        const userId = localStorage.getItem("userId");
+        console.log(userId);
+        const config = {
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        }
+        axios({method:"post",
+url: 'http://localhost:3000/api/posts', config,
+withCredentials: false,
+data:{userId,
+    comments, 
+    imageUrl
+  },
 })
-//prev pour être sur que la valuer précédente est bien prise en compte
-const click=()=>{
-setCount((prevCount) =>
-   prevCount +1 )
-}
+.then((res)=>{
+    console.log(res);
+})
+.catch((err)=>{
+    console.log(err)
+});
+
+    }
 
     return (
-        <div>
-            Hook{count}
-            <button onClick={click}>Click</button>
+        <>
+        <div className='global-post'>
+        <div className='message'>
+            <textarea name="comments" id="comments" placeholder="Ecrivez quelque chose" 
+            onChange={(e)=>setComments(e.target.value)} value={comments}/>
         </div>
+        <div>
+        <i className="fa-solid fa-image"></i>
+        <input type="file" id="file-upload" name="file" accept=".jpg, .jpeg, .png" 
+        onChange={(e)=> handleImageUrl(e)} />
+        </div>
+        <button type="submit" onClick={handlePost}>Poster</button>
+        {/*<p>{comments}</p>
+        <img src={imageUrl} alt="illustration du post"/>*/}
+        </div>
+        </>
     );
 };
 
-export default Hook;
-
-
-/*function Header () {
-    const handleClic=(e)=>{
-        console.log("ça fonctionne");
-        localStorage.clear();
-        window.location = '/';
-    }
-   
-    return (
-        <div>
-        <header className='header-container'>
-            
-            <h1>Le réseau social d'entreprise</h1>
-            
-            <img src={iconblack} alt='logo entreprise'/>
-            <button className="btn" onClick={handleClic}>logout</button>
-        </header>
-        </div>
-    );
-};*/
+export default NewPost;

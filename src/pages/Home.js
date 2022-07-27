@@ -1,5 +1,5 @@
 import React from 'react';
-import NewPost from '../components/NewPost';
+import CreatePost from '../components/CreatePost';
 import Posts from '../components/Posts';
 
 
@@ -8,7 +8,7 @@ const Home = () => {
     
     return (
         <div className='global'>
-            <NewPost/>
+            <CreatePost/>
             <Posts/>
         </div>
     );
