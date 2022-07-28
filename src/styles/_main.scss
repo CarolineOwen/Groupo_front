@@ -1,7 +1,7 @@
 .main-container
 {
-background-color: $tertiary;
-border: 2px $tertiary;
+background-color:$tertiary;
+border: 2px;
 box-shadow: 2px 2px 2px 2px darken($color: $tertiary, $amount: 20);
 display: flex;
 flex-direction: column;
@@ -14,6 +14,7 @@ padding-top: 15px;
 padding-bottom: 15px;
 width:50%;
 flex-wrap: nowrap;
+
 
 form{
 display: flex;
@@ -40,10 +41,12 @@ flex-wrap: nowrap;
   border: none;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.5s;
     &:hover{
         background-color: $primary;
         box-shadow: 1px 1px 1px 1px;
         opacity: 0.8;
+        letter-spacing: 0.25em;
     }
 }
 

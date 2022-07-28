@@ -17,11 +17,13 @@ flex-direction: column;
     margin-bottom:10px;
     padding:10px;
     img{
-        height:300px;
+        width: 100%;
+       max-height:300px;
         object-fit: cover;
         padding:10px;
         border-radius: 7px;
         border:5px solid $tertiary;
+        align-items: center;
     }
     p{
         font-size:20px;
@@ -39,24 +41,50 @@ flex-direction: column;
 
 
 .global-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: $tertiary;
     margin-bottom: 40px;
     padding:10px;
     width:90%;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px darken($color: $tertiary, $amount: 20);
-    textarea{
+    font-size: 20px;
+    .message-du-jour{
+        width: 90%;
+        
+    }
+    .joindre{
+        width: 50%;
+
+    }
+    .champs{
+        
         border:4px solid $secondary;
     border-radius: 5px;
-
-        width:100%;
-        font-size: 20px;
+        width:80%;
+        
     }
-.message{
-    border-radius: 5px;
-    background-color: $tertiary;
-    
-}}
+}
+
+.btn-submit{
+    border-radius: 20px;
+    padding: 15px 40px;
+  margin-top: 20px;
+  border: none;
+  font-weight: bold;
+ width: 30%;
+ background-color: $secondary;
+  cursor: pointer;
+  transition: 0.5s;
+    &:hover{
+        background-color: $primary;
+        box-shadow: 1px 1px 1px 1px;
+        opacity: 0.8;
+        letter-spacing: 0.25em;
+    }
+}
 
 /* MEDIA QUERRIES 
 smartphones*/

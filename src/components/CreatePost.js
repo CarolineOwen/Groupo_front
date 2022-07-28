@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 
 
@@ -16,7 +16,6 @@ setFile(e.target.files[0]);
 
 const handleSubmit =(e) =>{
 e.preventDefault();
-
 var bodyFormData = new FormData();
 
 bodyFormData.append("comments", comments)
@@ -32,6 +31,8 @@ headers: {
 })
 .then((res)=>{
 console.log(res);
+
+
 })
 .catch((err)=>{
     console.log(err)
@@ -41,19 +42,22 @@ console.log(res);
 
 return(
 <>
-<form action="" onSubmit={handleSubmit} id="post" method='post'>
-            <label htmlFor='comments'>votre message:
-            <input type="text" name="comments" id="comments" placeholder='Ecrivez quelque chose' onChange={(e) =>
+<form className="global-post" action="" onSubmit={handleSubmit} id="post" method='post'>
+  <div className='message-du-jour'>
+            <label htmlFor='comments'>Votre message:
+            <input className='champs' type="text" name="comments" id="comments" placeholder='Ecrivez quelque chose' onChange={(e) =>
        setComments(e.target.value)} value={comments}/></label>
+       </div>
        <br/>
-
+<div className='joindre'>
 <label htmlFor='imageUrl'>
     Une image? :
-    <input type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
+    <input className='champs' type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
        handleImageUrl(e)}/>
   </label>
+  </div>
 
-<input className='btn' type="submit" value="publier"/>
+<input className='btn-submit' type="submit" value="publier"/>
             </form>
 </>);
 };
