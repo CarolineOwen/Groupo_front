@@ -18,7 +18,7 @@ function App() {
     <Route path ='/' element={<Connexion/>}/>
     <Route path ='/signup' element={<Signup/>}/>
     <Route path ='/home' element={<Home/>}/>
-    <Route path ='/singlePost' element={<SinglePost/>}/>
+    <Route path ='/singlePost/:_id' element={<SinglePost/>}/>
     <Route path ='/*' element={<Error/>}/>
   </Routes>
   <Footer/>

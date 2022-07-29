@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+
 
 
 const Thread = ({props}) => {
@@ -16,8 +17,8 @@ const handleModify = (e)=>{
     }
     axios.get('http://localhost:3000/api/posts/' + (e), config)
     .then((res)=>
-    //console.log(res)
-     navigate('/singlePost'))     
+    console.log(res))
+ 
     .catch((err)=> console.log(err))
 
 }
@@ -31,8 +32,8 @@ const handleDelete = (e)=>{
     }
     axios.delete('http://localhost:3000/api/posts/' + (e), config)
     .then((res)=>
-    //console.log(res)
-     navigate('/singlePost'))     
+    console.log(res.data))
+         
     .catch((err)=> console.log(err))
 
 }
@@ -46,7 +47,7 @@ const handleDelete = (e)=>{
                 <button><i className="fa-solid fa-thumbs-up"></i>Like</button>
                 <button><i className="fa-solid fa-thumbs-down"></i>Dislike</button>
                 </div>
-                <button onClick={()=>handleModify(props._id)}>modifier</button>
+                <NavLink to={`/singlePost/${props._id}`}><button onClick={()=>handleModify(props._id)}>modifier</button></NavLink>
                 <button onClick={()=>handleDelete(props._id)}>supprimer</button>
             </div>
         </div>
