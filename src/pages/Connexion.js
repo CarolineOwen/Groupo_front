@@ -44,7 +44,7 @@ if(res.data.errors){
           <h1>Se connecter</h1>
             <form action="" onSubmit={handleLogin} id="login" method='post'>
             <label htmlFor='email'>Utilisateur:
-            <input type="email" name="email" id="email" placeholder='Entrez votre email' onChange={(e) =>
+            <input className='champs' type="email" name="email" id="email" placeholder='Entrez votre email' onChange={(e) =>
        setEmail(e.target.value)} value={email}/></label>
        <div className="email-error"></div>
        <br/>

@@ -31,6 +31,7 @@ headers: {
 })
 .then((res)=>{
 console.log(res);
+window.location.reload();
 
 
 })
@@ -47,7 +48,7 @@ return(
             <label htmlFor='comments'>Votre message:
             <input className='champs' type="text" name="comments" id="comments" placeholder='Ecrivez quelque chose' onChange={(e) =>
        setComments(e.target.value)} value={comments}/></label>
-       </div>
+       
        <br/>
 <div className='joindre'>
 <label htmlFor='imageUrl'>
@@ -55,6 +56,7 @@ return(
     <input className='champs' type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
        handleImageUrl(e)}/>
   </label>
+  </div>
   </div>
 
 <input className='btn-submit' type="submit" value="publier"/>

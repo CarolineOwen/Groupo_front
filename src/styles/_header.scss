@@ -4,13 +4,15 @@
     flex-direction: column;
     align-items: center;
   justify-content: center;
+  color: $secondary;
   background-color: rgb(248, 184, 184);
-  border: 2px solid $tertiary;
+  background:linear-gradient(0deg, $tertiary, darken($tertiary,10));
+  border: 1px solid $secondary;
   width: 100%;
-  box-shadow: inset 2px 0px 2px 2px darken($tertiary, 4);
+  box-shadow: inset 1px 0px 1px 2px lighten($secondary, 10);
   margin: auto;
   padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     .fa-users{
         padding-left: 20px;
     }
@@ -31,6 +33,7 @@ margin-bottom:20px;
         margin-bottom: 0px;
     
     }
+    
 }
 
 .footer-container{
@@ -43,7 +46,12 @@ margin-bottom:20px;
         color:$primary;
         padding: 15px;
         font-size: 25px;
+        transition: 0.5s;
+        &:hover{
+            box-shadow: 0px 0px 8px black;
+        }
     }
+    
 }
 
 

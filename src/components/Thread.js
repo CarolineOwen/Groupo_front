@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 
 const Thread = ({props}) => {
     console.log(props)
-    let navigate = useNavigate();
+    
 
 const handleModify = (e)=>{
     console.log(e);
@@ -48,7 +48,7 @@ const handleDelete = (e)=>{
                 <button><i className="fa-solid fa-thumbs-down"></i>Dislike</button>
                 </div>
                 <NavLink to={`/singlePost/${props._id}`}><button onClick={()=>handleModify(props._id)}>modifier</button></NavLink>
-                <button onClick={()=>handleDelete(props._id)}>supprimer</button>
+                <NavLink to={`/singlePost/${props._id}`}><button onClick={()=>handleModify(props._id)}>supprimer</button></NavLink>
             </div>
         </div>
     );

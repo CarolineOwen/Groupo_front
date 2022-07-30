@@ -14,7 +14,7 @@ padding-top: 15px;
 padding-bottom: 15px;
 width:50%;
 flex-wrap: nowrap;
-
+color:$secondary;
 
 form{
 display: flex;
@@ -30,8 +30,14 @@ flex-wrap: nowrap;
         margin:5px;
         padding:2px;
         border-radius: 3px;
+        font-size: 16px;
+        &:focus{
+            outline: none;
+            border: 3px solid $primary;
+        }
         
     }
+    
 }
 
 .btn{
