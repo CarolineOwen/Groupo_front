@@ -21,8 +21,6 @@ const handleRegister = async (e)=>{
         const controlPasswordError = document.querySelector('.passwordControl-error');
         controlPasswordError.innerHTML="";
 
-        
-
         if(password !== controlPassword){
                 controlPasswordError.innerHTML="Les mots de passe ne sont pas identiques, réessayez"
         }else{
@@ -40,10 +38,12 @@ const handleRegister = async (e)=>{
                         console.log(res)
                         if(res.data.erros){
                                 pseudoError.innerHTML = res.data.errors.pseudo;
-                        emailError.innerHTML = res.data.errors.email;
+                                emailError.innerHTML = res.data.errors.email;
                                 passwordError.innerHTML = res.data.errors.password;
                         }else{const token  =  res.data.token;
+                                const userId = res.data.userId;
                                 localStorage.setItem("token", token);
+                                localStorage.setItem("userId", userId);
                                 console.log(token);
                                 window.location = '/home';
                               }
@@ -53,42 +53,41 @@ const handleRegister = async (e)=>{
                       });
 
                 };}
-                
-
-                
 
     return (
             <>
-    <div className='main-container'>
-      <h1>Inscription: </h1>
-        <form action="" onSubmit={handleRegister} id="signup" method='post'>
-        <label htmlFor='pseudo'>Pseudo: 
-            <input type="text" name="pseudo" id="pseudo" placeholder='Choisissez un pseudo' onChange={(e) =>
-       setPseudo(e.target.value)} value={pseudo}/></label>
-       <div className="pseudo-error"></div>
+                <div className='main-container'>
+                        <h1>Inscription: </h1>
+                        <form action="" onSubmit={handleRegister} id="signup" method='post'>
+                                <label htmlFor='pseudo'>Pseudo: 
+                                <input type="text" name="pseudo" id="pseudo" autoFocus placeholder='Choisissez un pseudo' 
+                                onChange={(e) =>setPseudo(e.target.value)} value={pseudo}/>
+                                </label>
+                                <div className="pseudo-error"></div>
 
-       <label htmlFor='email'>Email: 
-            <input type="email" name="email" id="email" placeholder='Entrez votre email' onChange={(e) =>
-       setEmail(e.target.value)} value={email}/></label>
-       <div className="email-error"></div>
+                                <label htmlFor='email'>Email: 
+                                <input type="email" name="email" id="email" placeholder='Entrez votre email' 
+                                onChange={(e) =>setEmail(e.target.value)} value={email}/>
+                                </label>
+                                <div className="email-error"></div>
 
-       <label htmlFor='password'>Mot de passe: 
-            <input type="password" name="password" id="password" placeholder='Entrez un mot de passe' onChange={(e) =>
-       setPassword(e.target.value)} value={password}/></label>
-       <div className="password-error"></div>
+                                <label htmlFor='password'>Mot de passe: 
+                                <input type="password" name="password" id="password" placeholder='Entrez un mot de passe' 
+                                onChange={(e) =>setPassword(e.target.value)} value={password}/>
+                                </label>
+                                <div className="password-error"></div>
 
-       <label htmlFor='controlPassword'>Confirmez le mot de passe: 
-            <input type="password" name="controlPassword" id="controlPassword" placeholder='Confirmez le mot de passe' onChange={(e) =>
-       setControlPassword(e.target.value)} value={controlPassword}/></label>
-       <div className="passwordControl-error"></div>
+                                <label htmlFor='controlPassword'>Confirmez le mot de passe: 
+                                <input type="password" name="controlPassword" id="controlPassword" placeholder='Confirmez le mot de passe'
+                                 onChange={(e) =>setControlPassword(e.target.value)} value={controlPassword}/>
+                                 </label>
+                                <div className="passwordControl-error"></div>
 
-<input className='btn' type="submit" value="Valider l'inscription"/>
-        </form>
-        
-    </div>
-    </>
-      
-    );
+                                <input className='btn' type="submit" value="Valider l'inscription"/>
+                         </form> 
+                </div>
+        </>   
+        );
 };
 
 export default Signup;

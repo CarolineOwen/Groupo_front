@@ -4,42 +4,38 @@ import React, { useCallback, useState } from 'react';
 
 
 const CreatePost = () => {
- const [comments, setComments] = useState('');
-const [imageUrl, setImageUrl] = useState(null);
-const [file, setFile] = useState();
+  const [comments, setComments] = useState('');
+  const [imageUrl, setImageUrl] = useState(null);
+  const [file, setFile] = useState();
 
-
- const handleImageUrl =(e) =>{
-setImageUrl(e.target.files[0]);
-setFile(e.target.files[0]);
+  const handleImageUrl =(e) =>{
+    setImageUrl(e.target.files[0]);
+    setFile(e.target.files[0]);
     }
 
-const handleSubmit =(e) =>{
-e.preventDefault();
-var bodyFormData = new FormData();
+  const handleSubmit =(e) =>{
+    e.preventDefault();
+    var bodyFormData = new FormData();
 
-bodyFormData.append("comments", comments)
-bodyFormData.append("image", imageUrl)
-axios({method:"post",
-url: 'http://localhost:3000/api/posts',
-withCredentials: false,
-data:bodyFormData,
-headers: { 
-  "Authorization": "Bearer " + localStorage.getItem('token'),
-  "Content-Type": "multipart/form-data",
- },
-})
-.then((res)=>{
-console.log(res);
-window.location.reload();
-
-
-})
-.catch((err)=>{
+    bodyFormData.append("comments", comments)
+    bodyFormData.append("image", imageUrl)
+    axios({method:"post",
+    url: 'http://localhost:3000/api/posts',
+    withCredentials: false,
+    data:bodyFormData,
+    headers: { 
+      "Authorization": "Bearer " + localStorage.getItem('token'),
+      "Content-Type": "multipart/form-data",
+     },
+    })
+    .then((res)=>{
+    console.log(res);
+    window.location.reload();
+    })
+    .catch((err)=>{
     console.log(err)
-})
-
-}
+    })
+  }
 
 return(
 <>

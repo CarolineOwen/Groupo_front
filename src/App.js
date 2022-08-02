@@ -12,18 +12,17 @@ import {BrowserRouter} from 'react-router-dom';
 function App() {
   return (
     <div className='global'>
-<Header/>
-<BrowserRouter>
-  <Routes>
-    <Route path ='/' element={<Connexion/>}/>
-    <Route path ='/signup' element={<Signup/>}/>
-    <Route path ='/home' element={<Home/>}/>
-    <Route path ='/singlePost/:_id' element={<SinglePost/>}/>
-    <Route path ='/*' element={<Error/>}/>
-  </Routes>
-  <Footer/>
-</BrowserRouter>
-
+      <Header/>
+      <BrowserRouter>
+      <Routes>
+      <Route path ='/' element={<Connexion/>}/>
+      <Route path ='/signup' element={<Signup/>}/>
+      <Route path ='/home' element={<Home/>}/>
+      <Route path ='/singlePost/:_id' element={<SinglePost/>}/>
+      <Route path ='/*' element={<Error/>}/>
+      </Routes>
+      <Footer/>
+      </BrowserRouter>
     </div>
   );
 }

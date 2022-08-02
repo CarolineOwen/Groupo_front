@@ -4,7 +4,6 @@ import Thread from './Thread';
 
 const Posts = () => {
     const [data, setData] =useState([]);
-    
     const getData=()=>{
         const config = {
             headers: {

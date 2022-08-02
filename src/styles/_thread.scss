@@ -1,0 +1,46 @@
+.btn{background-color: $secondary;
+    border-radius: 20px;
+    padding: 15px 40px;
+  margin-top: 20px;
+  margin-right: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+    &:hover{
+        background-color: $primary;
+        box-shadow: 1px 1px 1px 1px;
+        opacity: 0.8;
+        letter-spacing: 0.25em;
+    }
+}
+
+.container-pouces{
+    display: flex;
+    margin-top: 30px;
+
+    
+}
+.pouces1{
+    padding: 10px;
+    width:100%;
+    margin:10px;
+    font-size: 20px;
+    background-color: whitesmoke;
+    border: 2px solid whitesmoke;
+    &:hover{
+    color:green;
+    }
+}
+.pouces2{
+    padding: 10px;
+    width:100%;
+    margin:10px;
+    padding-top: 20px;
+    font-size: 20px;
+    background-color: whitesmoke;
+    border: 2px solid whitesmoke;
+    &:hover{
+    color: $primary;
+    }
+}
