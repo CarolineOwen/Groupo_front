@@ -1,3 +1,41 @@
+.posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.comments{
+display: flex;
+flex-direction: column;
+    align-items:center;
+    border:2px solid $secondary;
+    width:100%;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 1px 2px darken($color: $secondary, $amount: 20);
+    border-radius: 5px;
+    margin-bottom:10px;
+    padding:10px;
+    
+    img{
+        width: 100%;
+       max-height:300px;
+        object-fit: cover;
+        padding:10px;
+        border-radius: 7px;
+        border:5px solid $tertiary;
+        align-items: center;
+    }
+    p{
+        font-size:20px;
+        color:black;
+    }
+    .date{
+        font-size: 15px;
+        font-style: italic;
+    }
+}
+
 .btn{background-color: $secondary;
     border-radius: 20px;
     padding: 15px 40px;
@@ -28,8 +66,10 @@
     font-size: 20px;
     background-color: whitesmoke;
     border: 2px solid whitesmoke;
+    transform: scale(1);
     &:hover{
     color:green;
+    transform: scale(2);
     }
 }
 .pouces2{
@@ -40,7 +80,18 @@
     font-size: 20px;
     background-color: whitesmoke;
     border: 2px solid whitesmoke;
+    transform: scale(1);
     &:hover{
     color: $primary;
+    transform: scale(2);
     }
 }
+
+
+/* MEDIA QUERRIES 
+smartphones*/
+
+@media screen and (max-width: 700px){
+    .posts{
+      width: 90%;
+    }}

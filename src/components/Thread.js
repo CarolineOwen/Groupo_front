@@ -7,6 +7,22 @@ const Thread = ({props}) => {
     const userId = props.userId;
     console.log(userId);
     console.log(props)
+
+    const dateParser = (num) => {
+        let options = {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          weekday: "long",
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        };
+        let timestamp = Date.parse(num);
+        let date = new Date(timestamp).toLocaleDateString("fr-FR", options);
+        return date.toString();
+      };
+
     const handleModify = (e)=>{
         console.log(e);
         const config = {
@@ -19,7 +35,8 @@ const Thread = ({props}) => {
         console.log(res))
         .catch((err)=> console.log(err))
     }
-const id= props._id
+
+    const id= props._id
     const handleSupp=(e)=>{
         e.preventDefault();
         axios({method:"delete",
@@ -39,11 +56,12 @@ const id= props._id
         })
     }
 
-  const visible = ((props.userId) === (localStorage.getItem("userId")))
+    const visible = ((props.userId) === (localStorage.getItem("userId")))
     return (
         <div className='global'>
             <div className='comments'>
-                <p>Message:{props.comments}</p>
+                <p className='date'>Date de publication: {dateParser(props.createdAt)}</p>
+                <p>Message: {props.comments}</p>
                 <div>{props.imageUrl && <img src={props.imageUrl} alt="legende"/>}</div>
                 <div className='container-pouces'>
                 <button className="pouces1"><i className="fa-solid fa-thumbs-up"></i></button>
