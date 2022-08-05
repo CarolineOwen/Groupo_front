@@ -71,6 +71,9 @@ flex-direction: column;
     color:green;
     transform: scale(2);
     }
+    &.isliked{
+        color:green;
+    }
 }
 .pouces2{
     padding: 10px;
@@ -84,6 +87,9 @@ flex-direction: column;
     &:hover{
     color: $primary;
     transform: scale(2);
+    }
+    &.isdisliked{
+        color: $primary;
     }
 }
 

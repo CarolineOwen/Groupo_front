@@ -7,7 +7,7 @@ const SinglePost = () => {
    
     const {_id}= useParams();
     const [getpost, setGetpost] = useState({});
-    const [comments, setComments] = useState('');
+    const [comments, setComments] = useState("");
     const [imageUrl, setImageUrl] = useState('');
     const [file, setFile] = useState();
     let navigate = useNavigate();
@@ -127,8 +127,8 @@ const SinglePost = () => {
         <>
             <form className="global-post-modify" action="" onSubmit={handleModi} id="post" method='post'>
                 <div className='message-du-jour'>
-                    <label htmlFor='comments'>Votre ancien message:  {getpost.comments}
-                         <input className='champs' type="text" name="comments" id="comments" placeholder='Modifier le message' 
+                    <label htmlFor='comments'>Votre ancien message: {getpost.comments}
+                         <input className='champs' type="text" name="comments" id="comments"  
                         onChange={(e) => setComments(e.target.value)} value={comments}/>
                     </label>
                 </div>

@@ -4,6 +4,7 @@ import Thread from './Thread';
 
 const Posts = () => {
     const [data, setData] =useState([]);
+
     const getData=()=>{
         const config = {
             headers: {
@@ -19,12 +20,12 @@ const Posts = () => {
     useEffect(()=>{
         getData()
 },[]);
-
+console.log(data);
     return (
         <>
         <div className='posts'>
-        {data.map((posts)=>(
-        <Thread key={posts._id} props={posts}/>))}
+        {data.map((post)=>(
+        <Thread key={post._id} post={post}/>))}
             </div>
 
         </>

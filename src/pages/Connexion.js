@@ -15,17 +15,21 @@ const Connexion = () => {
     axios({method:"post",
     url: 'http://localhost:3000/api/auth/login',
     data:{email, 
-      password,},
+      password,
+    },
     })
     .then((res)=>{
+      console.log(res.data);
       if(res.data.errors){
         emailError.innerHTML = res.data.errors.email;
         passwordError.innerHTML = res.data.errors.password;
     }else{
         const token  =  res.data.token;
         const userId  =  res.data.userId;
+        const role  =  res.data.role;
         localStorage.setItem("token", token);
         localStorage.setItem("userId", userId);
+        localStorage.setItem("role", role);
         navigate('/home');
     }
     })
