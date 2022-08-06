@@ -53,75 +53,6 @@ const SinglePost = () => {
         })
     }
 
-    // const handleSupp=(e)=>{
-    //     e.preventDefault();
-    //     axios({method:"delete",
-    //     url: `http://localhost:3000/api/posts/${_id}`,
-    //     withCredentials: false,
-    //     headers: { 
-    //     "Authorization": "Bearer " + localStorage.getItem('token'),
-    //     "Content-Type": "multipart/form-data",
-    //     },
-    //     })
-    //     .then((res)=>{
-    //         console.log(res);
-    //         navigate('/home');
-    //     })
-    //     .catch((err)=>{
-    //         console.log(err)
-    //     })
-    // }
-
-
-    const userId= localStorage.getItem('userId');
-    console.log(userId);
-    const handleLike=(e)=>{
-        e.preventDefault();
-        axios({method:"post",
-        url: `http://localhost:3000/api/posts/${_id}/like`,
-        withCredentials: false,
-        data:{
-            like:1,
-            userId
-        },
-        headers: { 
-            "Authorization": "Bearer " + localStorage.getItem('token'),
-             // "Content-Type": "multipart/form-data",
-        },
-        })
-        .then((res)=>{
-            console.log(res);
-            window.location.reload();
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-    }
-    const handleDislike=(e)=>{
-        e.preventDefault();
-        axios({method:"post",
-        url: `http://localhost:3000/api/posts/${_id}/like`,
-        withCredentials: false,
-        data:{
-            like:-1,
-            userId
-        },
-        headers: { 
-            "Authorization": "Bearer " + localStorage.getItem('token'),
-             // "Content-Type": "multipart/form-data",
-        },
-        })
-        .then((res)=>{
-            console.log(res);
-            window.location.reload();
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-    }
-    
-
-    
 
     return (
         <>
@@ -140,10 +71,7 @@ const SinglePost = () => {
                  <br/>
                  <input className='btn-submit' type="submit" value="modifier"/>
             </form>      
-            <div>
-                <button onClick={handleLike}><i className="fa-solid fa-thumbs-up"></i>Like:{getpost.usersLiked ? getpost.usersLiked.length : 0}</button>
-                <button onClick={handleDislike}><i className="fa-solid fa-thumbs-up"></i>Dislike:{getpost.usersDisliked ? getpost.usersDisliked.length : 0}</button>
-            </div>
+            
         </>
         );
 };

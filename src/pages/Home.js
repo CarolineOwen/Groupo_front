@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CreatePost from '../components/CreatePost';
 import Posts from '../components/Posts';
-
-
 
 const Home = () => {
     

@@ -51,18 +51,18 @@ useEffect(()=>{
         return date.toString();
       };
 
-    const handleModify = (e)=>{
-        console.log(e);
-        const config = {
-            headers: {
-            authorization: 'Bearer ' + localStorage.getItem('token')
-            }
-        }
-        axios.get('http://localhost:3000/api/posts/' + (e), config)
-        .then((res)=>
-        console.log(res))
-        .catch((err)=> console.log(err))
-    }
+    // const handleModify = ()=>{
+    //     //console.log(e);
+    //     const config = {
+    //         headers: {
+    //         authorization: 'Bearer ' + localStorage.getItem('token')
+    //         }
+    //     }
+    //     axios.get('http://localhost:3000/api/posts/', config)
+    //     .then((res)=>
+    //     console.log(res))
+    //     .catch((err)=> console.log(err))
+    // }
 
     const id= onePost._id
     const handleSupp=(e)=>{
@@ -165,7 +165,7 @@ useEffect(()=>{
                 </div>
                 <div>
                 {visible ? <button className='btn' onClick={handleSupp}>supprimer</button> : <p></p>}
-                {visible ? <NavLink to={`/singlePost/${onePost._id}`}><button className='btn' onClick={()=>handleModify(onePost._id)}>modifier</button></NavLink> : <p></p>}
+                {visible ? <NavLink to={`/singlePost/${onePost._id}`}><button className='btn'>modifier</button></NavLink> : <p></p>}
                 </div>
             </div>
         </div>
