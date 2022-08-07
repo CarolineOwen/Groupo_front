@@ -30,11 +30,19 @@ flex-direction: column;
         font-size:20px;
         color:black;
     }
-    .date{
+   
+}
+.intro{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    .intro-forme{
         font-size: 15px;
         font-style: italic;
+        padding-left: 20px;
     }
 }
+
 
 .btn{background-color: $secondary;
     border-radius: 20px;

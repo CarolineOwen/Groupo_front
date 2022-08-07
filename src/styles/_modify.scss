@@ -14,6 +14,16 @@
     .message-du-jour{
         width: 70%;
     }
+    
+    img{
+        width: 30%;
+        max-height:300px;
+        object-fit: cover;
+        padding:10px;
+        border-radius: 7px;
+        border:5px solid $tertiary;
+        align-items: center;
+    }
 
     label{
         display: flex;
@@ -31,6 +41,9 @@
       
     }
     .joindre{width: 50%;}
+    .trio{
+        background-color: aqua;
+    }
 }
 
 .btn-submit{
@@ -50,7 +63,10 @@
         opacity: 0.8;
         letter-spacing: 0.25em;
     }
+   
 }
+
+
 
 /* MEDIA QUERRIES 
 smartphones*/

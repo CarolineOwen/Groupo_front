@@ -3,29 +3,29 @@ import axios from 'axios';
 import Thread from './Thread';
 
 const Posts = () => {
-    const [data, setData] =useState([]);
+    const [data, setData] = useState([]);
 
-    const getData=()=>{
+    const getData = () => {
         const config = {
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('token')
             }
         }
         axios.get('http://localhost:3000/api/posts', config)
-        .then((res)=>
-         setData(res.data))
-        .catch((err)=> console.log(err))
+            .then((res) =>
+                setData(res.data))
+            .catch((err) => console.log(err))
     }
-   
-    useEffect(()=>{
+
+    useEffect(() => {
         getData()
-},[]);
-console.log(data);
+    }, []);
+    console.log(data);
     return (
         <>
-        <div className='posts'>
-        {data.map((post)=>(
-        <Thread key={post._id} post={post}/>))}
+            <div className='posts'>
+                {data.map((post) => (
+                    <Thread key={post._id} post={post} />))}
             </div>
 
         </>
