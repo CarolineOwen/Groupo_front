@@ -31,8 +31,10 @@ const Signup = () => {
 					console.log(res)
 					const token = res.data.token;
 					const userId = res.data.userId;
+					const pseudo = res.data.pseudo;
 					localStorage.setItem("token", token);
 					localStorage.setItem("userId", userId);
+					localStorage.setItem("pseudo", pseudo);
 					console.log(token);
 					window.location = '/home';
 

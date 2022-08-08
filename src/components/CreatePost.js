@@ -7,6 +7,8 @@ const CreatePost = () => {
   const [comments, setComments] = useState('');
   const [imageUrl, setImageUrl] = useState(null);
   const [file, setFile] = useState();
+  const email = localStorage.getItem("email");
+  const pseudo = localStorage.getItem("pseudo");
 
   const handleImageUrl = (e) => {
     setImageUrl(e.target.files[0]);
@@ -18,6 +20,8 @@ const CreatePost = () => {
     var bodyFormData = new FormData();
     bodyFormData.append("comments", comments)
     bodyFormData.append("image", imageUrl)
+    bodyFormData.append("email", email)
+    bodyFormData.append("pseudo", pseudo)
     axios({
       method: "post",
       url: 'http://localhost:3000/api/posts',
@@ -43,7 +47,7 @@ const CreatePost = () => {
         <div className='message-du-jour'>
           <label htmlFor='comments'>Votre message:
             <input className='champs' type="text" name="comments" id="comments" placeholder='Ecrivez quelque chose' onChange={(e) =>
-              setComments(e.target.value)} value={comments} required/></label>
+              setComments(e.target.value)} value={comments} required /></label>
 
           <br />
           <div className='joindre'>

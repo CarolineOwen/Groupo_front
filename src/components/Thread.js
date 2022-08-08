@@ -3,21 +3,11 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
 
-
 const Thread = ({ post }) => {
     const userId = localStorage.getItem("userId")
     const [isliked, setIsliked] = useState(false);
     const [isdisliked, setIsdisliked] = useState(false);
     const [onePost, SetOnePost] = useState(post);
-    const [email, SetEmail] = useState("")
-
-   
-    axios.get('http://localhost:3000/api/auth/login')
-        .then((res) =>
-        SetEmail(res.data.email))
-        .catch((err) => console.log(err))
-
-        
 
     const getData = () => {
         const config = {
@@ -126,15 +116,14 @@ const Thread = ({ post }) => {
     const visible = (onePost.userId === (localStorage.getItem("userId"))) || (role === "admin")
     const boutonlike = <button onClick={handleLike} className={`pouces1${isliked ? ' isliked' : ''}`}><i className="fa-solid fa-thumbs-up"></i>{onePost.usersLiked ? onePost.usersLiked.length : 0}</button>
     const boutondislike = <button onClick={handleDislike} className={`pouces2${isdisliked ? ' isdisliked' : ''}`}><i className="fa-solid fa-thumbs-down"></i>{onePost.usersDisliked ? onePost.usersDisliked.length : 0}</button>
+
     
-
-
     return (
         <div className='global'>
             <div className='comments'>
-            <div className="intro">
-                <p className='intro-forme'>Publié par:{email} </p>
-                <p className='intro-forme'>Le: {dateParser(onePost.createdAt)}</p>
+                <div className="intro">
+                    <p className='intro-forme'>Publié par:{onePost.pseudo} </p>
+                    <p className='intro-forme'>Le: {dateParser(onePost.createdAt)}</p>
                 </div>
                 <p>Message: {onePost.comments}</p>
                 <div>{onePost.imageUrl && <img src={onePost.imageUrl} alt="legende" />}</div>
