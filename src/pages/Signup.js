@@ -6,14 +6,21 @@ const Signup = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [controlPassword, setControlPassword] = useState('');
+	const controlPasswordError = document.querySelector('.passwordControl-error');
+
+
+
+
 
 	const handleRegister = async (e) => {
 		e.preventDefault();
-		const controlPasswordError = document.querySelector('.passwordControl-error');
 		controlPasswordError.innerHTML = "";
 		if (password !== controlPassword) {
 			controlPasswordError.innerHTML = "Les mots de passe ne sont pas identiques, réessayez"
-		} else {
+		}
+
+
+		else {
 			axios(
 				{
 					method: "post",
@@ -41,7 +48,7 @@ const Signup = () => {
 				})
 				.catch((err) => {
 					console.log(err)
-					controlPasswordError.innerHTML = "*Au moins 6 caractères, 1 majuscule, 1 minuscule et 1 chiffre";
+					controlPasswordError.innerHTML = "*Au moins 6 caractères, 1 majuscule, 1 minuscule et 1 chiffre, ou format email invalide";
 				});
 
 		};

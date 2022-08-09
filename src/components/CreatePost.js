@@ -52,8 +52,8 @@ const CreatePost = () => {
           <br />
           <div className='joindre'>
             <label htmlFor='imageUrl'>
-              Une image? :
-              <input className='champs' type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
+              Une image?
+              <input className='input-image' type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
                 handleImageUrl(e)} />
             </label>
           </div>

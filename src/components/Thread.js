@@ -117,12 +117,12 @@ const Thread = ({ post }) => {
     const boutonlike = <button onClick={handleLike} className={`pouces1${isliked ? ' isliked' : ''}`}><i className="fa-solid fa-thumbs-up"></i>{onePost.usersLiked ? onePost.usersLiked.length : 0}</button>
     const boutondislike = <button onClick={handleDislike} className={`pouces2${isdisliked ? ' isdisliked' : ''}`}><i className="fa-solid fa-thumbs-down"></i>{onePost.usersDisliked ? onePost.usersDisliked.length : 0}</button>
 
-    
+
     return (
         <div className='global'>
             <div className='comments'>
                 <div className="intro">
-                    <p className='intro-forme'>Publié par:{onePost.pseudo} </p>
+                    <p className='intro-forme'>Publié par: {onePost.pseudo} </p>
                     <p className='intro-forme'>Le: {dateParser(onePost.createdAt)}</p>
                 </div>
                 <p>Message: {onePost.comments}</p>

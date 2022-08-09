@@ -1,31 +1,30 @@
-.main-container
-{
+.main-container{
     background:linear-gradient(0deg, $tertiary, darken($tertiary,10));
-border: 2px;
-box-shadow: 2px 2px 2px 2px darken($color: $tertiary, $amount: 20);
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin-top: 20px;
-margin-bottom: 50px;
-border-radius: 10px;
-padding-top: 15px;
-padding-bottom: 15px;
-width:50%;
-flex-wrap: nowrap;
-color:$secondary;
-
-form{
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items:center;
+    border: 2px;
+    box-shadow: 2px 2px 2px 2px darken($color: $tertiary, $amount: 20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width:50%;
+    flex-wrap: nowrap;
+    color:$secondary;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items:center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        
     input{
         background-color: $secondary;
         margin:10px;
@@ -35,52 +34,50 @@ flex-wrap: nowrap;
         &:focus{
             outline: none;
             border: 3px solid $primary;
+            }
         }
-        
-        
-    }
-    
-}
-
-.btn{
-    border-radius: 20px;
-    padding: 15px 40px;
-  margin-top: 20px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s;
-    &:hover{
-        background-color: $primary;
-        box-shadow: 1px 1px 1px 1px;
-        opacity: 0.8;
-        letter-spacing: 0.25em;
-    }
-}
-
-p{
-    font-style: italic;
-}
-i{
-    color:$primary;
-    padding-left: 5px;
-    font-size: 20px;
-    transform: scale(1);
-    transition-duration: 0.5s;
-    &:hover{
-        transform: scale(1.5);
     }
 
-}
-.email-error, .password-error, .passwordControl-error{
-    font-style: italic;
-    font-weight: bold;
-    font-size: 13px;
-    color: $primary;
-    background-color: whitesmoke;
-    box-shadow: 0px 0px 8px #ffffff;
-    border-radius: 5px;
-}
+    .btn{
+        border-radius: 20px;
+        padding: 15px 40px;
+        margin-top: 20px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            background-color: $primary;
+            box-shadow: 1px 1px 1px 1px;
+            opacity: 0.8;
+            letter-spacing: 0.25em;
+        }
+    }
+
+    p{
+        font-style: italic;
+    }
+
+    i{
+        color:$primary;
+        padding-left: 5px;
+        font-size: 20px;
+        transform: scale(1);
+        transition-duration: 0.5s;
+        &:hover{
+            transform: scale(1.5);
+        }
+    }
+
+    .email-error, .password-error, .passwordControl-error{
+        font-style: italic;
+        font-weight: bold;
+        font-size: 13px;
+        color: $primary;
+        background-color: whitesmoke;
+        box-shadow: 0px 0px 8px #ffffff;
+        border-radius: 5px;
+    }
 }
 
 /* MEDIA QUERRIES 

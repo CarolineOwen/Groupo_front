@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -20,14 +20,16 @@ const SinglePost = () => {
         }
         axios.get(`http://localhost:3000/api/posts/${_id}`, config)
             .then((res) => (res.data))
-            .then((data) => {(setGetpost(data));
-            (setComments(data.comments));
-            (setImageUrl(data.imageUrl))
-    console.log(data.imageUrl)})
+            .then((data) => {
+                (setGetpost(data));
+                (setComments(data.comments));
+                (setImageUrl(data.imageUrl))
+                console.log(data.imageUrl)
+            })
             .catch((err) => console.log(err))
     }, [_id])
 
-   
+
 
     const handleImageUrl = (e) => {
         setImageUrl(e.target.files[0]);
@@ -58,7 +60,7 @@ const SinglePost = () => {
             })
     }
 
-const isImage = getpost.imageUrl
+    const isImage = getpost.imageUrl
     return (
         <>
             <form className="global-post-modify" action="" onSubmit={handleModi} id="post" method='post'>
@@ -69,11 +71,11 @@ const isImage = getpost.imageUrl
                     </label>
                 </div>
                 <br />
-                {isImage ? 
-                <label htmlFor='imageUrl'>Modifier l'image? <img src={getpost.imageUrl} alt="nouvelle image"/></label> : <p>Ajouter une image?</p>}
-                    <input className='champs' type="file" name="imageUrl" id='imageUrl'
-                        onChange={(e) => handleImageUrl(e)} />
-                
+                {isImage ?
+                    <label htmlFor='imageUrl'>Modifier l'image? <img src={getpost.imageUrl} alt="nouvelle image" /></label> : <p>Ajouter une image?</p>}
+                <input className='champs' type="file" name="imageUrl" id='imageUrl'
+                    onChange={(e) => handleImageUrl(e)} />
+
                 <br />
                 <input className='btn-submit' type="submit" value="modifier" />
             </form>
