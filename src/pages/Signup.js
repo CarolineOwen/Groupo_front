@@ -8,10 +8,6 @@ const Signup = () => {
 	const [controlPassword, setControlPassword] = useState('');
 	const controlPasswordError = document.querySelector('.passwordControl-error');
 
-
-
-
-
 	const handleRegister = async (e) => {
 		e.preventDefault();
 		controlPasswordError.innerHTML = "";
@@ -47,7 +43,8 @@ const Signup = () => {
 
 				})
 				.catch((err) => {
-					console.log(err)
+					console.log(err.response)
+					//suivre le chemin après response si ... true = affiche <di>erreur> sinon div vide et set state email error et king=unique
 					controlPasswordError.innerHTML = "*Au moins 6 caractères, 1 majuscule, 1 minuscule et 1 chiffre, ou format email invalide";
 				});
 

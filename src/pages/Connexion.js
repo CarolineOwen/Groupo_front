@@ -54,16 +54,14 @@ const Connexion = () => {
             <input className='champs' type="email" name="email" id="email" autoFocus placeholder='Entrez votre email'
               onChange={(e) => setEmail(e.target.value)} value={email} required />
           </label>
-
           <div className="email-error"></div>
-          <br />
+          <br/>
           <label htmlFor='password'>Mot de passe :
             <input type="password" name="password" id='password' placeholder='Entrez votre mot de passe'
               onChange={(e) => setPassword(e.target.value)} value={password} required />
           </label>
           <div className="password-error"></div>
-          <br />
-
+          <br/>
           <input className='btn' type="submit" value="Connexion" />
         </form>
         <p>Pour créer un compte c'est par içi <a href="/signup"><i className="fa-solid fa-hand-pointer"></i></a></p>
