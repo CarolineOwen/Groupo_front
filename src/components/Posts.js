@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Thread from './Thread';
 
+//Fonction qui appelle l'API et récupère ses données pour pouvoir les traiter et les afficher sur le Thread
+
 const Posts = () => {
     const [data, setData] = useState([]);
 

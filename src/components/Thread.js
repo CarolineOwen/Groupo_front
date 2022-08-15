@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
+//Fonction qui retourne le fil d'actualité en affichant les posts des utilisateurs
 
 const Thread = ({ post }) => {
     const userId = localStorage.getItem("userId")
@@ -27,7 +28,7 @@ const Thread = ({ post }) => {
         onePost.usersDisliked.includes(userId) ? setIsdisliked(true) : setIsdisliked(false)
     }, [userId, onePost.usersDisliked, onePost.usersLiked])
 
-
+    //fonction pour affichier la date dans un certain format
     const dateParser = (num) => {
         let options = {
             hour: "2-digit",
@@ -44,6 +45,7 @@ const Thread = ({ post }) => {
     };
 
 
+    //fonction pour supprimer un post
     const id = onePost._id
     const handleSupp = (e) => {
         e.preventDefault();
@@ -65,6 +67,7 @@ const Thread = ({ post }) => {
             })
     }
 
+    //fonction pour gérer les likes
     const handleLike = (e) => {
         axios({
             method: "post",
@@ -88,7 +91,7 @@ const Thread = ({ post }) => {
 
     }
 
-
+    //fonction pour gérer les dislikes
     const handleDislike = (e) => {
         e.preventDefault();
         axios({
@@ -135,9 +138,9 @@ const Thread = ({ post }) => {
                         {boutondislike}
                     </div>}
                 </div>
-                <div>
+                <div className='boutons-modif-supp'>
                     {visible && <button className='btn' onClick={handleSupp}>supprimer</button>}
-                    {visible && <NavLink to={`/singlePost/${onePost._id}`}><button className='btn'>modifier</button></NavLink>}
+                    {visible && <NavLink to={`/ModifyPost/${onePost._id}`}><button className='btn'>modifier</button></NavLink>}
                 </div>
             </div>
         </div>

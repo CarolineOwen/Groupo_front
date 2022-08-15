@@ -1,5 +1,7 @@
 import React from 'react';
 
+//Renvoyer une erreur si l'URL du site n'existe pas
+
 const Error = () => {
     return (
         <div>

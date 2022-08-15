@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-
+//Fonction qui gère le bloc pour poster des messages sur le réseau social
 
 const CreatePost = () => {
   const [comments, setComments] = useState('');

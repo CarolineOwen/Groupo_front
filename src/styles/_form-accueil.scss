@@ -19,17 +19,18 @@
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        justify-content: space-around;
+        justify-content: center;
         align-items:center;
         margin-top: 20px;
         margin-bottom: 20px;
-        width: 100%;
+        width: 90%;
         
     input{
         background-color: $secondary;
         margin:10px;
-        padding:2px;
-        border-radius: 3px;
+        padding:5px;
+        border-radius: 10px;
+        border-bottom: 2px solid $primary;
         font-size: 16px;
         &:focus{
             outline: none;
@@ -46,6 +47,7 @@
         font-weight: bold;
         cursor: pointer;
         transition: 0.5s;
+        width: 50%;
         &:hover{
             background-color: $primary;
             box-shadow: 1px 1px 1px 1px;
@@ -86,5 +88,55 @@ smartphones*/
 @media screen and (max-width: 700px){
     .main-container{
         width:90%;
+         font-size: 14px;
+         .btn{
+        width: 80%;
+       
     }
+    }
+label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input{
+        width: 50%;
+    }
+}
+   
+
+    form{
+        width: 100%;
+        justify-content: space-around;
+        input{
+            width: 60%;
+        }
+        
+    }
+}
+
+
+/* MEDIA QUERRIES 
+tablettes*/
+@media screen and (min-width: 701px) and (max-width: 900px){
+    .main-container{
+        width:80%;
+        font-size: 14px;
+         .btn{
+        width: 50%;
+    }
+    }
+    
+    form{
+    width: 80%;
+    label{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input{
+        width: 50%;
+    }
+}
+}
 }

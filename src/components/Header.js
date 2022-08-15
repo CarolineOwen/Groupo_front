@@ -2,6 +2,7 @@ import React from 'react';
 import iconblack from "../assets/icon.png";
 
 
+//Header fixe sur toutes les pages du site
 
 function Header() {
 

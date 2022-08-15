@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
+// fonction qui permet aux utilisateurs de créer un compte pour ensuite se connecter au réseau social
+
 const Signup = () => {
 	const [pseudo, setPseudo] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [controlPassword, setControlPassword] = useState('');
 	const controlPasswordError = document.querySelector('.passwordControl-error');
+	//controlPasswordError.innerHTML = "";
 
 	const handleRegister = async (e) => {
 		e.preventDefault();
-		controlPasswordError.innerHTML = "";
+
+		//declaration de la regex pour verifier l'emai
+		let regex = new RegExp(
+			"^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9]+[.]{1}[a-z]{2,10}$"
+		);
 		if (password !== controlPassword) {
-			controlPasswordError.innerHTML = "Les mots de passe ne sont pas identiques, réessayez"
+			return controlPasswordError.innerHTML = "Les mots de passe ne sont pas identiques, réessayez"
 		}
 
+		if (!regex.test(email)) {
+			controlPasswordError.innerHTML = "Le format de l'email est invalide ou mail déjà pris"
+		}
 
 		else {
 			axios(
@@ -43,9 +54,13 @@ const Signup = () => {
 
 				})
 				.catch((err) => {
-					console.log(err.response)
-					//suivre le chemin après response si ... true = affiche <di>erreur> sinon div vide et set state email error et king=unique
-					controlPasswordError.innerHTML = "*Au moins 6 caractères, 1 majuscule, 1 minuscule et 1 chiffre, ou format email invalide";
+					console.log(err)
+					if (err.response.data.error === "Le mot de passe est insuffisant uppercase,digits") {
+						controlPasswordError.innerHTML = "<div>*Au moins 6 caractères, 1 majuscule, 1 minuscule et 1 chiffre, ou format email invalide</div>";
+					}
+					if (err.response.data.error.errors.email.kind === "unique" || err.response.data.error.errors.pseudo.kind === "unique") {
+						controlPasswordError.innerHTML = "<div>Le pseudo ou email est déjà pris</div>";
+					}
 				});
 
 		};

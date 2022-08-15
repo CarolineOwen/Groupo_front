@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 
 
+//Footer fixe sur toutes les pages du site
 
 function Footer() {
 

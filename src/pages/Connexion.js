@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+//Fonction pour se connecter sur le site quand les utilisateurs ont déjà un login et un mot de passe
+
 const Connexion = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -55,13 +57,13 @@ const Connexion = () => {
               onChange={(e) => setEmail(e.target.value)} value={email} required />
           </label>
           <div className="email-error"></div>
-          <br/>
+          <br />
           <label htmlFor='password'>Mot de passe :
             <input type="password" name="password" id='password' placeholder='Entrez votre mot de passe'
               onChange={(e) => setPassword(e.target.value)} value={password} required />
           </label>
           <div className="password-error"></div>
-          <br/>
+          <br />
           <input className='btn' type="submit" value="Connexion" />
         </form>
         <p>Pour créer un compte c'est par içi <a href="/signup"><i className="fa-solid fa-hand-pointer"></i></a></p>

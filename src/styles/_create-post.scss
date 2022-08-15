@@ -1,28 +1,18 @@
-.global-post-modify{
+.global-post{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: $tertiary;
+    background:linear-gradient(0deg, $tertiary, darken($tertiary,10));
     margin-bottom: 40px;
     padding:20px;
-    width:90%;
+    width:70%;
     color:$secondary;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px darken($color: $tertiary, $amount: 20);
     font-size: 20px;
+
     .message-du-jour{
-        width: 70%;
-    }
-    
-    img{
-        width: 30%;
-        max-height:300px;
-        object-fit: cover;
-        padding:10px;
-        border-radius: 7px;
-        border:5px solid $tertiary;
-        align-items: center;
+        width: 90%;
     }
 
     label{
@@ -31,19 +21,25 @@
     .champs{
         margin-left: 15px;
         border:4px solid $secondary;
-    border-radius: 5px;
+        border-radius: 5px;
         width:70%;
         font-size:16px ;
         &:focus{
             outline: none;
             border: 3px solid $primary;
         }
-      
     }
-    .joindre{width: 50%;}
-    .trio{
-        background-color: aqua;
+
+    .joindre{
+        width: 50%;
     }
+}
+
+
+.input-image{
+    color: $secondary;
+    padding-top: 5px;
+    padding-left:10px;
 }
 
 .btn-submit{
@@ -56,7 +52,7 @@
     font-size: 17px;
     background-color: $secondary;
     cursor: pointer;
-     transition: 0.5s;
+    transition: 0.5s;
     &:hover{
         background-color: $primary;
         box-shadow: 1px 1px 1px 1px;
@@ -65,21 +61,18 @@
     }
 }
 
-
-
 /* MEDIA QUERRIES 
 smartphones*/
 
 @media screen and (max-width: 700px){
-
-    .global-post-modify{
+    .btn-submit{
+        width: 70%;
+    }
+    .global-post{
         width: 90%;
         display: flex;
         .message-du-jour{width:100%}
         .champs{width:100%}
         .joindre{width: 100%;}
-    }
-    .btn-submit{
-        width: 50%;
     }
 }

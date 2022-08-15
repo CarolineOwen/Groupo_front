@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+//fonction qui permet aux utilisteurs de modifier leur posts, rajouter une image ou modifier le texte
 
-const SinglePost = () => {
+const ModifyPost = () => {
 
     const { _id } = useParams();
     const [getpost, setGetpost] = useState({});
@@ -73,7 +74,7 @@ const SinglePost = () => {
                 <br />
                 {isImage ?
                     <label htmlFor='imageUrl'>Modifier l'image? <img src={getpost.imageUrl} alt="nouvelle image" /></label> : <p>Ajouter une image?</p>}
-                <input className='champs' type="file" name="imageUrl" id='imageUrl'
+                <input className='champs1' type="file" name="imageUrl" id='imageUrl'
                     onChange={(e) => handleImageUrl(e)} />
 
                 <br />
@@ -84,4 +85,4 @@ const SinglePost = () => {
     );
 };
 
-export default SinglePost;
+export default ModifyPost;
