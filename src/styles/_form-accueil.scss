@@ -1,7 +1,7 @@
 .main-container{
     background:linear-gradient(0deg, $tertiary, darken($tertiary,10));
     border: 2px;
-    box-shadow: 2px 2px 2px 2px darken($color: $tertiary, $amount: 20);
+    box-shadow: 2px 2px 2px 0px darken($color: $tertiary, $amount: 20);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,12 @@
     width:50%;
     flex-wrap: nowrap;
     color:$secondary;
-
+label{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
     form{
         display: flex;
         flex-direction: column;
@@ -91,36 +96,24 @@ smartphones*/
          font-size: 14px;
          .btn{
         width: 80%;
-       
     }
+      form{
+        width: 100%;
+        justify-content: space-around;
     }
 label{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    input{
-        width: 50%;
-    }
-}
+  }}}
    
-
-    form{
-        width: 100%;
-        justify-content: space-around;
-        input{
-            width: 60%;
-        }
-        
-    }
-}
-
 
 /* MEDIA QUERRIES 
 tablettes*/
-@media screen and (min-width: 701px) and (max-width: 900px){
+@media screen and (min-width: 701px) and (max-width: 1400px){
     .main-container{
-        width:80%;
+        width:70%;
         font-size: 14px;
          .btn{
         width: 50%;
@@ -130,7 +123,7 @@ tablettes*/
     form{
     width: 80%;
     label{
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;

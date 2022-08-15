@@ -9,7 +9,7 @@ const CreatePost = () => {
   const [file, setFile] = useState();
   const email = localStorage.getItem("email");
   const pseudo = localStorage.getItem("pseudo");
-
+  
   const handleImageUrl = (e) => {
     setImageUrl(e.target.files[0]);
     setFile(e.target.files[0]);
@@ -56,6 +56,7 @@ const CreatePost = () => {
               <input className='input-image' type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
                 handleImageUrl(e)} />
             </label>
+            <p className='format'>* Format image accepté: jpg, jpeg, png</p>
           </div>
         </div>
 

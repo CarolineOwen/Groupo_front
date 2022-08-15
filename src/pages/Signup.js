@@ -58,8 +58,11 @@ const Signup = () => {
 					if (err.response.data.error === "Le mot de passe est insuffisant uppercase,digits") {
 						controlPasswordError.innerHTML = "<div>*Au moins 6 caractères, 1 majuscule, 1 minuscule et 1 chiffre, ou format email invalide</div>";
 					}
-					if (err.response.data.error.errors.email.kind === "unique" || err.response.data.error.errors.pseudo.kind === "unique") {
-						controlPasswordError.innerHTML = "<div>Le pseudo ou email est déjà pris</div>";
+					if (err.response.data.error.errors.email) {
+						controlPasswordError.innerHTML = "<div>L'email est déjà pris</div>";
+					}
+					else if (err.response.data.error.errors.pseudo.name === "ValidatorError"){
+						controlPasswordError.innerHTML = "<div>Le pseudo est déjà pris</div>"
 					}
 				});
 
