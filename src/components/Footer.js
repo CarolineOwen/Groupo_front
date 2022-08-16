@@ -10,11 +10,11 @@ function Footer() {
         localStorage.clear();
     }
     return (
-        <div className='footer-container'>
+        <footer className='footer-container'>
             <div onClick={logout}>
                 <NavLink to="/"><i className="fa-solid fa-door-open"></i></NavLink>
             </div>
-        </div>
+        </footer>
     )
 }
 

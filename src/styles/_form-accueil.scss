@@ -16,7 +16,7 @@
     color:$secondary;
 label{
     display: flex;
-    width: 50%;
+    width: 60%;
     justify-content: space-between;
     align-items: center;
 }
@@ -93,7 +93,7 @@ smartphones*/
 @media screen and (max-width: 700px){
     .main-container{
         width:90%;
-         font-size: 14px;
+         font-size: 15px;
          .btn{
         width: 80%;
     }
@@ -101,35 +101,30 @@ smartphones*/
         width: 100%;
         justify-content: space-around;
     }
-label{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }}}
+    label{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input{
+        width: 60%;
+    }
+    }
+ 
+}}
    
 
 /* MEDIA QUERRIES 
 tablettes*/
-@media screen and (min-width: 701px) and (max-width: 1400px){
+@media screen and (min-width: 701px) and (max-width: 1000px){
     .main-container{
         width:70%;
-        font-size: 14px;
          .btn{
         width: 50%;
+        }
+        input{
+            width: 50%;
+        }
     }
-    }
+}
     
-    form{
-    width: 80%;
-    label{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    input{
-        width: 50%;
-    }
-}
-}
-}

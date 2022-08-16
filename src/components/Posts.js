@@ -22,7 +22,7 @@ const Posts = () => {
     useEffect(() => {
         getData()
     }, []);
-    console.log(data);
+    
     return (
         <>
             <div className='posts'>

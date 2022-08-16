@@ -42,14 +42,12 @@ const Signup = () => {
 
 			)
 				.then((res) => {
-					console.log(res)
 					const token = res.data.token;
 					const userId = res.data.userId;
 					const pseudo = res.data.pseudo;
 					localStorage.setItem("token", token);
 					localStorage.setItem("userId", userId);
 					localStorage.setItem("pseudo", pseudo);
-					console.log(token);
 					window.location = '/home';
 
 				})
@@ -71,7 +69,7 @@ const Signup = () => {
 
 	return (
 		<>
-			<div className='main-container'>
+			<main className='main-container'>
 				<h1>Inscription: </h1>
 				<form action="" onSubmit={handleRegister} id="signup" method='post'>
 					<label htmlFor='pseudo'>Pseudo:
@@ -100,7 +98,7 @@ const Signup = () => {
 
 					<input className='btn' type="submit" value="Valider l'inscription" />
 				</form>
-			</div>
+			</main>
 		</>
 	);
 };

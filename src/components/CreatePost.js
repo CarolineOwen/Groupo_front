@@ -33,7 +33,6 @@ const CreatePost = () => {
       },
     })
       .then((res) => {
-        console.log(res);
         window.location.reload();
       })
       .catch((err) => {
@@ -50,14 +49,13 @@ const CreatePost = () => {
               setComments(e.target.value)} value={comments} required /></label>
 
           <br />
-          <div className='joindre'>
             <label htmlFor='imageUrl'>
               Une image?
               <input className='input-image' type="file" name="imageUrl" id='imageUrl' onChange={(e) =>
                 handleImageUrl(e)} />
             </label>
             <p className='format'>* Format image accepté: jpg, jpeg, png</p>
-          </div>
+          
         </div>
 
         <input className='btn-submit' type="submit" value="publier" />

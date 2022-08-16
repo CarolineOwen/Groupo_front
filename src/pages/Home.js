@@ -11,10 +11,10 @@ const Home = () => {
     }
 
     return (
-        <div className='global'>
+        <main className='global'>
             <CreatePost />
             <Posts />
-        </div>
+        </main>
     );
 };
 

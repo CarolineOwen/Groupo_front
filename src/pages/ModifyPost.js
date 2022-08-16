@@ -25,7 +25,7 @@ const ModifyPost = () => {
                 (setGetpost(data));
                 (setComments(data.comments));
                 (setImageUrl(data.imageUrl))
-                console.log(data.imageUrl)
+                
             })
             .catch((err) => console.log(err))
     }, [_id])
@@ -53,13 +53,19 @@ const ModifyPost = () => {
             },
         })
             .then((res) => {
-                console.log(res);
                 navigate('/home');
             })
             .catch((err) => {
                 console.log(err)
             })
     }
+    
+        const handleSupImage= (e)=>{
+            e.preventDefault();
+            setImageUrl("");
+            setFile("");
+            setGetpost(e);
+        }
 
     const isImage = getpost.imageUrl
     return (
@@ -73,10 +79,9 @@ const ModifyPost = () => {
                 </div>
                 <br />
                 {isImage ?
-                    <label htmlFor='imageUrl'>Modifier l'image? <img src={getpost.imageUrl} alt="nouvelle image" /></label> : <p>Ajouter une image?</p>}
+                    ((<label htmlFor='imageUrl'>Modifier l'image? <img src={getpost.imageUrl} alt="nouvelle image" /><button className='image-sup' onClick={handleSupImage}>Supprimer l'image</button></label>)) : <p>Ajouter une image?</p>}
                 <input className='champs1' type="file" name="imageUrl" id='imageUrl'
                     onChange={(e) => handleImageUrl(e)} />
-
                 <br />
                 <input className='btn-submit' type="submit" value="modifier" />
             </form>

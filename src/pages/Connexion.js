@@ -49,7 +49,7 @@ const Connexion = () => {
 
   return (
     <>
-      <div className='main-container'>
+      <main className='main-container'>
         <h1>Se connecter</h1>
         <form action="" onSubmit={handleLogin} id="login" method='post'>
           <label htmlFor='email'>Utilisateur:
@@ -67,7 +67,7 @@ const Connexion = () => {
           <input className='btn' type="submit" value="Connexion" />
         </form>
         <p>Pour créer un compte c'est par içi <a href="/signup"><i className="fa-solid fa-hand-pointer"></i></a></p>
-      </div>
+      </main>
     </>
   );
 };

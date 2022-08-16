@@ -59,7 +59,6 @@ const Thread = ({ post }) => {
             },
         })
             .then((res) => {
-                console.log(res);
                 window.location.reload();
             })
             .catch((err) => {
@@ -82,7 +81,6 @@ const Thread = ({ post }) => {
             },
         })
             .then((res) => {
-                console.log(res);
                 getData();
             })
             .catch((err) => {
@@ -107,7 +105,6 @@ const Thread = ({ post }) => {
             },
         })
             .then((res) => {
-                console.log(res);
                 getData();
             })
             .catch((err) => {
@@ -122,7 +119,7 @@ const Thread = ({ post }) => {
 
 
     return (
-        <div className='global'>
+        <section className='global'>
             <div className='comments'>
                 <div className="intro">
                     <p className='intro-forme'>Publié par: {onePost.pseudo} </p>
@@ -143,7 +140,7 @@ const Thread = ({ post }) => {
                     {visible && <NavLink to={`/ModifyPost/${onePost._id}`}><button className='btn'>modifier</button></NavLink>}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
