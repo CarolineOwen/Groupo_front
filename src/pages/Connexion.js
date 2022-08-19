@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 
 //Fonction pour se connecter sur le site quand les utilisateurs ont déjà un login et un mot de passe
 
 const Connexion = () => {
+  const navigate = useNavigate();
+  const userId = localStorage.getItem("userId")
+  
+
+  useEffect(() => {
+    userId && navigate('/home')
+  }, [])
+    
+
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  let navigate = useNavigate();
+  
 
   const handleLogin = (e) => {
     e.preventDefault();
-    //const emailError = document.querySelector('.email-error');
     const passwordError = document.querySelector('.password-error');
 
     axios({
@@ -38,9 +48,7 @@ const Connexion = () => {
       }
       )
       .catch((err) => {
-        console.log(err);
         console.log(err.message)
-        //emailError.innerHTML = "Paire login/mot de passe incorrecte.";
         passwordError.innerHTML = "Paire login/mot de passe incorrecte. Pas de compte? Veuillez en créer un.";
       });
   };
